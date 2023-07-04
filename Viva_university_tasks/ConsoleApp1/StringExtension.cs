@@ -74,5 +74,21 @@ namespace ConsoleApp1
             }
             return isValid;
         }
+        public static string Trim(this string str)
+        {
+            int start = 0;
+            int end = str.Length - 1;
+            if (str == null || str.Length == 0)
+                return str;
+            while (start <= end && str[start].Equals(" ")) ;
+            {
+                start++;
+            }
+            while (end >= start && str[start].Equals(" ")) ;
+            {
+                end--;
+            }
+            return str.Substring(start, end);
+        }
     }
 }

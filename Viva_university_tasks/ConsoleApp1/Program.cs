@@ -28,5 +28,11 @@ DateTime now = DateTime.Now;
 Console.WriteLine(now.ToFriendlyDate());*/
 
 //------------------TASK 4-----------------------
-string email = "vardan.sargsyan.772001@mail.com";
-Console.WriteLine(email.IsValidEmail());
+
+/*string email = "vardan.sargsyan.772001@mail.com";
+Console.WriteLine(email.IsValidEmail());*/
+
+//------------------TASK 4-----------------------
+
+string str = "                     hello World!    ";
+Console.WriteLine(str.Trim());
