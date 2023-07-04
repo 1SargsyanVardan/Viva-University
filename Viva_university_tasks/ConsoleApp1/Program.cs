@@ -3,8 +3,9 @@
 //------------------TASK 1-----------------------
 /*string str = "barrev hayastan";
 Console.WriteLine(str.StringManipulation());*/
+
 //------------------TASK 2-----------------------
-List<Person> myList = new List<Person>();
+/*List<Person> myList = new List<Person>();
 Console.Write("Please input quantity of persons: ");
 int numberOfPersons = int.Parse(Console.ReadLine());
 //before sorted
@@ -19,4 +20,10 @@ List<Person> sortedList = myList.SortedByProperty();
 foreach (Person person in sortedList)
 {
     Console.WriteLine($"{person.Name} is {person.Age} years old.");
-}
+}*/
+
+//------------------TASK 3-----------------------
+
+DateTime now = DateTime.Now;
+Console.WriteLine(now.ToFriendlyDate());
+
