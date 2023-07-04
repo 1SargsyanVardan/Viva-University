@@ -23,7 +23,10 @@ foreach (Person person in sortedList)
 }*/
 
 //------------------TASK 3-----------------------
-
+/*
 DateTime now = DateTime.Now;
-Console.WriteLine(now.ToFriendlyDate());
+Console.WriteLine(now.ToFriendlyDate());*/
 
+//------------------TASK 4-----------------------
+string email = "vardan.sargsyan.772001@mail.com";
+Console.WriteLine(email.IsValidEmail());
