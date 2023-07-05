@@ -134,7 +134,7 @@ double totalUsage = dataUsageRecords.CalculateTotalUsage(startDate, endDate);
 Console.WriteLine($"The total: {totalUsage}");*/
 
 //------------------TASK 15-----------------------
-
+/*
 
 List<CallRecorder> calls = new List<CallRecorder>
 {
@@ -158,4 +158,20 @@ DateTime endDate = new DateTime(2023, 7, 3);
 
 int costs=calls.RecorderCost(startDate, endDate) + dataUsageRecords.CalculateTotalCostUsage(startDate,endDate);
 //costs = 50 + 48
-Console.WriteLine($"The total cost of calls and data usage: {costs}$");
+Console.WriteLine($"The total cost of calls and data usage: {costs}$");*/
+
+//------------------TASK 16-----------------------
+
+List<NetworkSpeed> networkSpeeds = new List<NetworkSpeed>
+{
+    new NetworkSpeed(30, new DateTime(2023, 6, 30)),
+    new NetworkSpeed(20, new DateTime(2023, 7, 1)),
+    new NetworkSpeed(35, new DateTime(2023, 7, 2)),
+    new NetworkSpeed(52, new DateTime(2023, 7, 3)),
+    new NetworkSpeed(48, new DateTime(2023, 7, 4))
+};
+
+DateTime startDate = new DateTime(2023, 7, 1);
+DateTime endDate = new DateTime(2023, 7, 3);
+double averageSpeed = networkSpeeds.CalculateAverageSpeed(startDate,endDate);
+Console.WriteLine($"The average Network speed from {startDate} to {endDate} equals: {averageSpeed}Mbps");
