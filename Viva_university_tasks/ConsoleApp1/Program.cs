@@ -46,5 +46,15 @@ Console.WriteLine(json);    */
 
 //------------------TASK 7-----------------------
 
-double number = 6.1255468;
-Console.WriteLine(number.MyRound(2));
+/*double number = 6.1255468;
+Console.WriteLine(number.MyRound(2));*/
+
+//------------------TASK 8-----------------------
+string filePath = "C:/Users/User/OneDrive/Рабочий стол/ConsoleApp1/ConsoleApp2/ConsoleApp2";
+bool exists = filePath.FileExists();
+
+if (exists)
+    Console.WriteLine("File exists!");
+else
+    Console.WriteLine("File does not exist.");
+//haskacel em bayc chisht chi ashxatum!!!!!!!!!!!!!!!!!!!!!!!!

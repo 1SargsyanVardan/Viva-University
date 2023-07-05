@@ -90,5 +90,9 @@ namespace ConsoleApp1
             }
             return str.Substring(start, end);
         }
+        public static bool FileExists(this string filePath)
+        {
+            return File.Exists(filePath);
+        }
     }
 }
