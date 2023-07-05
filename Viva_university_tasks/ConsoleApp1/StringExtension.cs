@@ -94,5 +94,10 @@ namespace ConsoleApp1
         {
             return File.Exists(filePath);
         }
+        //helping with chatGPT
+        public static T ToEnum<T>(this string str) where T : Enum
+        {
+            return (T)Enum.Parse(typeof(T), str);
+        }
     }
 }

@@ -40,9 +40,6 @@ Console.WriteLine(str.Trim());*/
 
 //------------------TASK 6-----------------------
 
-/*Person myObject = new Person();
-string json = JsonSerializer.Serialize(myObject);
-Console.WriteLine(json);    */
 
 //------------------TASK 7-----------------------
 
@@ -50,11 +47,23 @@ Console.WriteLine(json);    */
 Console.WriteLine(number.MyRound(2));*/
 
 //------------------TASK 8-----------------------
-string filePath = "C:/Users/User/OneDrive/Рабочий стол/ConsoleApp1/ConsoleApp2/ConsoleApp2";
+//haskacel em bayc chisht chi ashxatum!!!!!!!!!!!!!!!!!!!!!!!!
+/*string filePath = "C:/Users/User/OneDrive/Рабочий стол/ConsoleApp1/ConsoleApp2/ConsoleApp2";
 bool exists = filePath.FileExists();
 
 if (exists)
     Console.WriteLine("File exists!");
 else
-    Console.WriteLine("File does not exist.");
-//haskacel em bayc chisht chi ashxatum!!!!!!!!!!!!!!!!!!!!!!!!
+    Console.WriteLine("File does not exist.");*/
+
+//------------------TASK 9-----------------------
+
+string str = "Green";
+Colors color = str.ToEnum<Colors>();
+Console.WriteLine(color);
+public enum Colors
+{
+    Red,
+    Green,
+    Blue
+};
