@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1;
+using System.Text.Json;
 
 //------------------TASK 1-----------------------
 /*string str = "barrev hayastan";
@@ -32,7 +33,13 @@ Console.WriteLine(now.ToFriendlyDate());*/
 /*string email = "vardan.sargsyan.772001@mail.com";
 Console.WriteLine(email.IsValidEmail());*/
 
-//------------------TASK 4-----------------------
+//------------------TASK 5-----------------------
 
-string str = "                     hello World!    ";
-Console.WriteLine(str.Trim());
+/*string str = "                     hello World!    ";
+Console.WriteLine(str.Trim());*/
+
+//------------------TASK 6-----------------------
+
+Person myObject = new Person();
+string json = JsonSerializer.Serialize(myObject);
+Console.WriteLine(json);    

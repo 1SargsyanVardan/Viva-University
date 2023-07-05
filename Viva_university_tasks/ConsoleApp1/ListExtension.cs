@@ -10,18 +10,22 @@ namespace ConsoleApp1
     {
         string? name;
         int age;
+        string? position;
         public Person()
         {
             Console.Write("Please input name: ");
             this.name = Console.ReadLine();
             Console.Write("Please input age: ");
             this.age = int.Parse(Console.ReadLine());
+            Console.Write("Please input your position: ");
+            this.position = Console.ReadLine();
 
         }
-        public Person(string name, int age)
+        public Person(string name, int age,string position)
         {
             this.name = name;
             this.age = age;
+            this.position = position;   
         }
         //inthernet versia
         /* public int CompareTo(Person comparePerson)
@@ -40,6 +44,10 @@ namespace ConsoleApp1
         public int Age
         {
             get { return age; }
+        }
+        public string Position
+        {
+            get { return position; }
         }
     }
     public static class ListExtension
