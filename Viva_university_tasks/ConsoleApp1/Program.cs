@@ -78,7 +78,7 @@ calls[3] = new CallRecorder(new DateTime(2023, 7, 3), 12, 23);
 calls[3] = new CallRecorder(new DateTime(2023, 7, 4), 17, 58);*/
 //verevini vra error er talis
 
-List<CallRecorder> calls = new List<CallRecorder>
+/*List<CallRecorder> calls = new List<CallRecorder>
 {
     new CallRecorder(new DateTime(2023, 6, 30), 15, 10),
     new CallRecorder(new DateTime(2023, 7, 1), 5, 8),
@@ -90,7 +90,7 @@ List<CallRecorder> calls = new List<CallRecorder>
 DateTime startDate = new DateTime(2023, 7, 1);
 DateTime endDate = new DateTime(2023, 7, 3);
 int recCost = calls.RecorderDuration(startDate, endDate);
-Console.WriteLine($"All cost is {recCost}$");
+Console.WriteLine($"All cost is {recCost}$");*/
 
 //------------------TASK 12-----------------------
 /*
@@ -132,3 +132,30 @@ DateTime endDate = new DateTime(2023, 7, 3);
 
 double totalUsage = dataUsageRecords.CalculateTotalUsage(startDate, endDate);
 Console.WriteLine($"The total: {totalUsage}");*/
+
+//------------------TASK 15-----------------------
+
+
+List<CallRecorder> calls = new List<CallRecorder>
+{
+    new CallRecorder(new DateTime(2023, 6, 30), 15, 10),
+    new CallRecorder(new DateTime(2023, 7, 1), 5, 8),
+    new CallRecorder(new DateTime(2023, 7, 2), 8, 19),
+    new CallRecorder(new DateTime(2023, 7, 3), 12, 23),
+    new CallRecorder(new DateTime(2023, 7, 4), 17, 58)
+};
+List<DataUsage> dataUsageRecords = new List<DataUsage>
+{
+    new DataUsage( new DateTime(2023, 6, 30), 2.5, 12 ),
+    new DataUsage( new DateTime(2023, 7, 1),1.3, 15),
+    new DataUsage( new DateTime(2023, 7, 2),0.8, 25),
+    new DataUsage( new DateTime(2023, 7, 3),1.2, 8),
+    new DataUsage( new DateTime(2023, 7, 4),2.0, 16)
+};
+
+DateTime startDate = new DateTime(2023, 7, 1);
+DateTime endDate = new DateTime(2023, 7, 3);
+
+int costs=calls.RecorderCost(startDate, endDate) + dataUsageRecords.CalculateTotalCostUsage(startDate,endDate);
+//costs = 50 + 48
+Console.WriteLine($"The total cost of calls and data usage: {costs}$");

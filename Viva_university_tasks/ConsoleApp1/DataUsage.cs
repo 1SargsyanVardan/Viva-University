@@ -10,21 +10,24 @@ namespace ConsoleApp1
     {
         DateTime date;
         double usage;
+        int cost;
         public DataUsage()
         {
 
         }
-        public DataUsage(DateTime date,double usage)
+        public DataUsage(DateTime date,double usage,int cost)
         {
             this.date = date;   
             this.usage = usage;
+            this.cost = cost;   
         }
         public DateTime Date { get { return date; } }
         public double Usage { get { return usage; } }
+        public int Cost { get { return cost; } }
     }
     public static class DataUsageExtensions
     {
-        public static double CalculateTotalUsage(this IEnumerable<DataUsage> dataUsage,DateTime startDate,DateTime endDate)
+        public static double CalculateTotalUsage(this IEnumerable<DataUsage> dataUsage, DateTime startDate, DateTime endDate)
         {
             double total = 0;
             foreach (DataUsage temp in dataUsage)
@@ -37,6 +40,16 @@ namespace ConsoleApp1
             /*return dataUsage
             .Where(d => d.Date >= startDate && d.Date <= endDate)
             .Sum(d => d.Usage);*/
+        }
+        public static int CalculateTotalCostUsage(this IEnumerable<DataUsage> dataUsage, DateTime startDate, DateTime endDate)
+        {
+            int totalCost = 0;
+            foreach (DataUsage temp in dataUsage)
+            {
+                if (temp.Date >= startDate && temp.Date <= endDate)
+                    totalCost += temp.Cost;
+            }
+            return totalCost;
         }
     }
 }

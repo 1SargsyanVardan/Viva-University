@@ -24,6 +24,19 @@ namespace ConsoleApp1
             Console.WriteLine($"{allDuration} calls were made during this period!");
             return allCost;
         }
+        public static int RecorderCost(this IEnumerable<CallRecorder> call, DateTime startDate, DateTime endDate)
+        {
+            if (call == null)
+                return 0;
+            int allCost = 0;
+            foreach (CallRecorder callRecorder in call)
+            {
+                if (callRecorder.Date >= startDate && callRecorder.Date <= endDate)
+                    allCost += callRecorder.Cost;
+                
+            }
+            return allCost;
+        }
     }
     public class CallRecorder
     {
