@@ -87,7 +87,24 @@ foreach (var sms in filteredSenderSms)
     sms.AllData();*/
 
 //------------------TASK 13-----------------------
-
+/*
 string number = "37494831910";
 string newNumber = number.FormatPhoneNumber();
-Console.WriteLine(newNumber);
+Console.WriteLine(newNumber);*/
+
+//------------------TASK 14-----------------------
+
+List<DataUsage> dataUsageRecords = new List<DataUsage>
+{
+    new DataUsage( new DateTime(2023, 6, 30), 2.5 ),
+    new DataUsage( new DateTime(2023, 7, 1),1.3),
+    new DataUsage( new DateTime(2023, 7, 2),0.8),
+    new DataUsage( new DateTime(2023, 7, 3),1.2),
+    new DataUsage( new DateTime(2023, 7, 4),2.0) 
+};
+
+DateTime startDate = new DateTime(2023, 7, 1);
+DateTime endDate = new DateTime(2023, 7, 3);
+
+double totalUsage = dataUsageRecords.CalculateTotalUsage(startDate, endDate);
+Console.WriteLine($"The total: {totalUsage}");
