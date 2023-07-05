@@ -40,6 +40,11 @@ Console.WriteLine(str.Trim());*/
 
 //------------------TASK 6-----------------------
 
-Person myObject = new Person();
+/*Person myObject = new Person();
 string json = JsonSerializer.Serialize(myObject);
-Console.WriteLine(json);    
+Console.WriteLine(json);    */
+
+//------------------TASK 7-----------------------
+
+double number = 6.1255468;
+Console.WriteLine(number.MyRound(2));
