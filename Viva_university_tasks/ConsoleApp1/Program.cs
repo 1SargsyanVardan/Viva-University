@@ -69,7 +69,7 @@ public enum Colors
 };*/
 
 //------------------TASK 12-----------------------
-
+/*
 List<Sms> smsMessiges = new List<Sms>
 {
     new Sms("ID: 1788","Viva-MTS","Shnorhavorum enq, duq haxtel eq victorinan!"),
@@ -84,4 +84,10 @@ foreach (var sms in filteredByKeywordSms)
 Console.WriteLine(new string('-',100));
 var filteredSenderSms = smsMessiges.FilterBySender("Viva-MTS");
 foreach (var sms in filteredSenderSms)
-    sms.AllData();
+    sms.AllData();*/
+
+//------------------TASK 13-----------------------
+
+string number = "37494831910";
+string newNumber = number.FormatPhoneNumber();
+Console.WriteLine(newNumber);

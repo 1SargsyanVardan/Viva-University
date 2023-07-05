@@ -99,5 +99,24 @@ namespace ConsoleApp1
         {
             return (T)Enum.Parse(typeof(T), str);
         }
+        public static string FormatPhoneNumber(this string str)
+        {
+            if (str == null)
+                return "The phone number field is empty";
+            for (int i = 0; i < str.Length; ++i)
+            {
+                if (str[i] < '0' || str[i] > '9')
+                {
+                    return "This isn`t Phone number,Please Enter Valid number";
+                    break;
+                }
+            }
+            if (str.Length != 11 || str.Substring(0, 3) != "374")
+                return "The phone number isn`t Armenian";
+
+            string newPhoneNumber = $"(+{str.Substring(0, 3)})-{str.Substring(3, 2)}-{str.Substring(5, 3)}-{str.Substring(8, 3)}";
+            return newPhoneNumber;
+
+        }
     }
 }
