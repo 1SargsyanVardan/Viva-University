@@ -58,7 +58,7 @@ else
 
 //------------------TASK 9-----------------------
 
-string str = "Green";
+/*string str = "Green";
 Colors color = str.ToEnum<Colors>();
 Console.WriteLine(color);
 public enum Colors
@@ -66,4 +66,22 @@ public enum Colors
     Red,
     Green,
     Blue
+};*/
+
+//------------------TASK 12-----------------------
+
+List<Sms> smsMessiges = new List<Sms>
+{
+    new Sms("ID: 1788","Viva-MTS","Shnorhavorum enq, duq haxtel eq victorinan!"),
+    new Sms("ID: 8568","Beeline","Shnorhavorum enq, duq haxtel eq victorinan!"),
+    new Sms("ID: 7858","Viva-MTS","Dzer hashvi mnacordy kazmum e 1000 dr."),
+    new Sms("ID: 1858","Viva-MTS","Shnorhavorum enq, duq darcel eq mer premium hachaxordy!")
 };
+
+var filteredByKeywordSms = smsMessiges.FilterByKeyword("Shnorhavorum enq");
+foreach (var sms in filteredByKeywordSms)
+    sms.AllData();
+Console.WriteLine(new string('-',100));
+var filteredSenderSms = smsMessiges.FilterBySender("Viva-MTS");
+foreach (var sms in filteredSenderSms)
+    sms.AllData();
