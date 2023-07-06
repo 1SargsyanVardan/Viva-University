@@ -218,7 +218,7 @@ foreach (CallRecorder rec in x)
 
 //------------------TASK 18-----------------------
 
-TarifPlans[] tarifs = new TarifPlans[] 
+/*TarifPlans[] tarifs = new TarifPlans[] 
 {
     new TarifPlans("X",5000,20,3000),
     new TarifPlans("Y",3000,10,800),
@@ -232,4 +232,23 @@ CallRecorder userRecorder = new CallRecorder(new DateTime(2023,5,31),1100);
 var recommendedPlan = userRecorder.RecommendPlan(userDataUsage,tarifs);
 Console.WriteLine($"The most suitable pricing plan is {recommendedPlan.Name},that costs {recommendedPlan.Cost} Dram.");
 Console.WriteLine($"Internet GB: {recommendedPlan.InthernetGB}");
-Console.WriteLine($"Minutes: {recommendedPlan.Minutes}");
+Console.WriteLine($"Minutes: {recommendedPlan.Minutes}");*/
+
+
+//------------------TASK *-----------------------
+GeoLocation location = new GeoLocation();
+location.Latitude = 309991.121555;
+location.Longitude = 10090.5463;
+
+List<GeoLocation> locations = new List<GeoLocation>()
+{
+    new GeoLocation(30.2626,25.666),
+    new GeoLocation(6551.2626,425.666),
+    new GeoLocation(545.2626,251.666),
+    new GeoLocation(523.2626,412.666),
+};
+
+var nearestTower = location.FindNearestTower(locations);
+Console.WriteLine("The nearest cell tower GeoLocation");
+Console.WriteLine($"GeoLocation Latitude: {nearestTower.Latitude}");
+Console.WriteLine($"GeoLocation Longitude: {nearestTower.Longitude}");
