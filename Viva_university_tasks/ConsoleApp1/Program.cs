@@ -70,7 +70,7 @@ public enum Colors
 
 //-------------------------------------------------------Task10--------------------------------------------------------
 
-List<int> myList = new List<int> { 10, 9, 8, 7, 5, 6, 4 };
+/*List<int> myList = new List<int> { 10, 9, 8, 7, 5, 6, 4 };
 var filteredList = myList.WhereIf(x => x % 2 == 0);
 foreach (var item in filteredList)
 Console.Write(item + " ");
@@ -84,9 +84,9 @@ public static class IEnumerableExtension
             if (predicate(item))
                 yield return item;
         }
-        
+
     }
-}
+}*/
 
 //-------------------------------------------------------Task11--------------------------------------------------------
 
@@ -144,7 +144,7 @@ Console.WriteLine(newNumber);*/
     new DataUsage( new DateTime(2023, 7, 1),1.3),
     new DataUsage( new DateTime(2023, 7, 2),0.8),
     new DataUsage( new DateTime(2023, 7, 3),1.2),
-    new DataUsage( new DateTime(2023, 7, 4),2.0) 
+    new DataUsage( new DateTime(2023, 7, 4),2.0)
 };
 
 DateTime startDate = new DateTime(2023, 7, 1);
@@ -154,8 +154,8 @@ double totalUsage = dataUsageRecords.CalculateTotalUsage(startDate, endDate);
 Console.WriteLine($"The total: {totalUsage}");*/
 
 //------------------TASK 15-----------------------
-/*
 
+/*
 List<CallRecorder> calls = new List<CallRecorder>
 {
     new CallRecorder(new DateTime(2023, 6, 30), 15, 10),
@@ -176,7 +176,7 @@ List<DataUsage> dataUsageRecords = new List<DataUsage>
 DateTime startDate = new DateTime(2023, 7, 1);
 DateTime endDate = new DateTime(2023, 7, 3);
 
-int costs=calls.RecorderCost(startDate, endDate) + dataUsageRecords.CalculateTotalCostUsage(startDate,endDate);
+int costs = calls.RecorderCost(startDate, endDate) + dataUsageRecords.CalculateTotalCostUsage(startDate, endDate);
 //costs = 50 + 48
 Console.WriteLine($"The total cost of calls and data usage: {costs}$");*/
 
@@ -215,3 +215,21 @@ foreach (CallRecorder rec in x)
     Console.WriteLine($"Date of call: {rec.Date}");
     Console.WriteLine($"Network Oeperator: {rec.NetworkOperator}");
 }*/
+
+//------------------TASK 18-----------------------
+
+TarifPlans[] tarifs = new TarifPlans[] 
+{
+    new TarifPlans("X",5000,20,3000),
+    new TarifPlans("Y",3000,10,800),
+    new TarifPlans("Start",2000,5,300),
+    new TarifPlans("UNLIM",4500,double.MaxValue,450),
+};
+
+DataUsage userDataUsage = new DataUsage(new DateTime(2023,5,31),20);
+CallRecorder userRecorder = new CallRecorder(new DateTime(2023,5,31),1100);
+
+var recommendedPlan = userRecorder.RecommendPlan(userDataUsage,tarifs);
+Console.WriteLine($"The most suitable pricing plan is {recommendedPlan.Name},that costs {recommendedPlan.Cost} Dram.");
+Console.WriteLine($"Internet GB: {recommendedPlan.InthernetGB}");
+Console.WriteLine($"Minutes: {recommendedPlan.Minutes}");

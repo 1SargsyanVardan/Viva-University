@@ -15,7 +15,8 @@ namespace ConsoleApp1
         {
 
         }
-        public DataUsage(DateTime date,double usage,int cost)
+        
+        public DataUsage(DateTime date,double usage,int cost = 0)
         {
             this.date = date;   
             this.usage = usage;

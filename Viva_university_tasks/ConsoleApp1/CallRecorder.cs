@@ -47,6 +47,19 @@ namespace ConsoleApp1
                     yield return item;
             }
         }
+        public static TarifPlans RecommendPlan(this CallRecorder callRecorder, DataUsage dataUsages,TarifPlans[] tarifs)
+        {
+            TarifPlans plan = new TarifPlans("ANLIMIT",double.MaxValue,double.MaxValue,int.MaxValue);
+            foreach (var item in tarifs)
+            {
+                if(item.InthernetGB >= dataUsages.Usage)
+                    plan=item;
+                if(item.Minutes>=callRecorder.Duration)
+                    plan = item;
+            }
+            return plan;
+        }
+
     }
     public class CallRecorder
     {
@@ -60,6 +73,12 @@ namespace ConsoleApp1
         public CallRecorder()
         {
 
+        }
+        public CallRecorder(DateTime date, int duration, int cost = 0)
+        {
+            this.date = date;
+            this.duration = duration;
+            this.cost = cost;
         }
         public CallRecorder(DateTime date, int duration, int cost,string calledFrom,string calledTo, string networkOperator)
         {
