@@ -68,6 +68,26 @@ public enum Colors
     Blue
 };*/
 
+//-------------------------------------------------------Task10--------------------------------------------------------
+
+List<int> myList = new List<int> { 10, 9, 8, 7, 5, 6, 4 };
+var filteredList = myList.WhereIf(x => x % 2 == 0);
+foreach (var item in filteredList)
+Console.Write(item + " ");
+
+public static class IEnumerableExtension
+{
+    public static IEnumerable<T> WhereIf<T>(this IEnumerable<T> source, Func<T, bool> predicate)
+    {
+        foreach (var item in source)
+        {
+            if (predicate(item))
+                yield return item;
+        }
+        
+    }
+}
+
 //-------------------------------------------------------Task11--------------------------------------------------------
 
 /*CallRecorder[] calls = new CallRecorder[5];
@@ -179,7 +199,7 @@ Console.WriteLine($"The average Network speed from {startDate} to {endDate} equa
 //------------------TASK 17-----------------------
 
 
-List<CallRecorder> calls = new List<CallRecorder>()
+/*List<CallRecorder> calls = new List<CallRecorder>()
 {
     new CallRecorder(new DateTime(2023, 6, 30), 15, 10,"Armenia","Armenia","Viva-MTS"),
     new CallRecorder(new DateTime(2023, 7, 1), 5, 8,"France","Armenia","Viva-MTS"),
@@ -194,4 +214,4 @@ foreach (CallRecorder rec in x)
     Console.WriteLine($"From {rec.CallFrom} was call to {rec.CallTo} it lasted {rec.Duration}minuntes.");
     Console.WriteLine($"Date of call: {rec.Date}");
     Console.WriteLine($"Network Oeperator: {rec.NetworkOperator}");
-}
+}*/
