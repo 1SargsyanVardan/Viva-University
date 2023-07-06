@@ -44,7 +44,8 @@ namespace ConsoleApp1
             foreach (var item in callRecords)
             {
                 if(fromCountrys.Contains(item.CallFrom) && toCountrys.Contains(item.CallTo) && roamingOperator==item.NetworkOperator)
-                    yield return item;
+                    if(roamingOperator != "Armenia")
+                        yield return item;
             }
         }
         public static TarifPlans RecommendPlan(this CallRecorder callRecorder, DataUsage dataUsages,TarifPlans[] tarifs)
