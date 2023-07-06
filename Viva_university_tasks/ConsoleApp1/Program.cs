@@ -162,7 +162,7 @@ Console.WriteLine($"The total cost of calls and data usage: {costs}$");*/
 
 //------------------TASK 16-----------------------
 
-List<NetworkSpeed> networkSpeeds = new List<NetworkSpeed>
+/*List<NetworkSpeed> networkSpeeds = new List<NetworkSpeed>
 {
     new NetworkSpeed(30, new DateTime(2023, 6, 30)),
     new NetworkSpeed(20, new DateTime(2023, 7, 1)),
@@ -174,4 +174,24 @@ List<NetworkSpeed> networkSpeeds = new List<NetworkSpeed>
 DateTime startDate = new DateTime(2023, 7, 1);
 DateTime endDate = new DateTime(2023, 7, 3);
 double averageSpeed = networkSpeeds.CalculateAverageSpeed(startDate,endDate);
-Console.WriteLine($"The average Network speed from {startDate} to {endDate} equals: {averageSpeed}Mbps");
+Console.WriteLine($"The average Network speed from {startDate} to {endDate} equals: {averageSpeed}Mbps");*/
+
+//------------------TASK 17-----------------------
+
+
+List<CallRecorder> calls = new List<CallRecorder>()
+{
+    new CallRecorder(new DateTime(2023, 6, 30), 15, 10,"Armenia","Armenia","Viva-MTS"),
+    new CallRecorder(new DateTime(2023, 7, 1), 5, 8,"France","Armenia","Viva-MTS"),
+    new CallRecorder(new DateTime(2023, 7, 2), 8, 19,"Armenia","USA","Ucom"),
+    new CallRecorder(new DateTime(2023, 7, 3), 12, 23,"Russia","USA","Viva-MTS"),
+    new CallRecorder(new DateTime(2023, 7, 4), 17, 58,"Brazil","Armenia","Team-Telecom")
+};
+
+var x= calls.DetectRoamingCalls("Viva_MTS");
+foreach (CallRecorder rec in x)
+{
+    Console.WriteLine($"From {rec.CallFrom} was call to {rec.CallTo} it lasted {rec.Duration}minuntes.");
+    Console.WriteLine($"Date of call: {rec.Date}");
+    Console.WriteLine($"Network Oeperator: {rec.NetworkOperator}");
+}

@@ -15,7 +15,7 @@ namespace ConsoleApp1
 
         public static IEnumerable<Sms> FilterByKeyword(this IEnumerable<Sms> smsMessages, string keyword)
         {
-            return smsMessages.Where(sms => sms.SmsContent.Contains(keyword, StringComparison.OrdinalIgnoreCase));
+            return smsMessages.Where(sms => sms.SmsContent.Contains(keyword, StringComparison.OrdinalIgnoreCase));//?
         }
     }
     public class Sms
